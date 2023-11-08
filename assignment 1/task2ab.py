@@ -20,6 +20,12 @@ def greyscale(im):
         im ([type]): [np.array of shape [H, W]]
     """
 
+    H, W, D = im.shape
+
+    for h in range(H):
+        for w in range(W):
+            im[h][w] = im[h][w][0] * 0.212 + im[h][w][1] * 0.7151 + im[h][w][2] * 0.0722
+
     return im
 
 
